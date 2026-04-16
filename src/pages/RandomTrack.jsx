@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import getRandomTrack from '../music.js'
 import { tracks } from '../music.js'
 
 function RandomTrack() {
+  const location = useLocation()
   const genres = [...new Set(tracks.map(track => track.genre))].sort()
-  const [selectedGenre, setSelectedGenre] = useState('-')
-  const [track, setTrack] = useState(() => getRandomTrack('-'))
+  const [selectedGenre, setSelectedGenre] = useState(location.state?.genre || '-')
+  const [track, setTrack] = useState(location.state?.track || (() => getRandomTrack('-')))
 
   function handleGetRandom() {
     setTrack(getRandomTrack(selectedGenre))

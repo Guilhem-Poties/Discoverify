@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { tracks } from '../music.js'
 import './HomePage.css'
 
 function HomePage() {
   const genres = [...new Set(tracks.map(track => track.genre))].sort()
   const [selectedGenre, setSelectedGenre] = useState('-')
+
+  const navigate = useNavigate()
 
   const filteredTracks = selectedGenre === '-'
     ? tracks
@@ -34,7 +36,11 @@ function HomePage() {
         </div>
         <div className="song-grid">
           {filteredTracks.map((track, index) => (
-            <div className="song-card" key={index}>
+            <div
+              className="song-card"
+              key={index}
+              onClick={() => navigate('/random', { state: { track, genre: track.genre } })}
+            >
               <h3 className="song-title">{track.title}</h3>
               <p className="song-artist">{track.artist}</p>
               <p className="song-album">{track.album}</p>
