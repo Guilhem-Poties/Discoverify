@@ -14,11 +14,27 @@
 }
 
 header {
-  color: #636363;
-  width: 300px;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+}
+
+nav a:hover {
+  border-color: #646cff;
+}
 
 a {
   font-weight: 500;
@@ -31,8 +47,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -70,6 +84,9 @@ button:focus-visible {
     color: #747bff;
   }
   button {
+    background-color: #f9f9f9;
+  }
+  nav a {
     background-color: #f9f9f9;
   }
 }

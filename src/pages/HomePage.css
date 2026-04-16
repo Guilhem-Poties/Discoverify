@@ -1,0 +1,98 @@
+.catalogue-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.catalogue-controls h2 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.catalogue-controls select {
+  padding: 0.4em 0.8em;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1a1a1a;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.song-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: left;
+  transition: border-color 0.25s, transform 0.2s;
+}
+
+.song-card:hover {
+  border-color: #646cff;
+  transform: translateY(-2px);
+}
+
+.song-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.song-artist {
+  margin: 0 0 0.2rem;
+  font-size: 0.95em;
+  color: #646cff;
+}
+
+.song-album {
+  margin: 0 0 0.5rem;
+  font-size: 0.85em;
+  color: #888;
+  font-style: italic;
+}
+
+.song-genre {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  border-radius: 20px;
+  background-color: #646cff22;
+  color: #646cff;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.song-description {
+  margin: 0.6rem 0 0;
+  font-size: 0.85em;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+@media (prefers-color-scheme: light) {
+  .catalogue-controls select {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+  }
+
+  .song-card {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+  }
+
+  .song-title {
+    color: #213547;
+  }
+
+  .song-description {
+    color: #555;
+  }
+}

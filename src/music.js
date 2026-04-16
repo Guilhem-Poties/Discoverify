@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
 function getRandomTrack(genre) {
   if (genre == "-") {
     return tracks[Math.floor(Math.random() * tracks.length)];
@@ -26,7 +22,7 @@ function getTracksFromGenre(genre) {
 
 
 export default getRandomTrack
-
+export { tracks }
 
 const tracks = [
     {
